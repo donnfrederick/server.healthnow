@@ -1,0 +1,24 @@
+{
+  "name": "server.healthnow",
+  "version": "1.0.0",
+  "description": "For Healthnow Exam",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "healthnow"
+  ],
+  "author": "Donn Frederick Lucas",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "session-file-store": "^1.5.0"
+  }
+}
