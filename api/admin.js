@@ -35,4 +35,34 @@ router.post('/details', (req, res) => {
     );
 });
 
+router.get('/users', (req, res) => {
+    db.query("SELECT id, first_name, last_name, address, post_code, phone_number, email, username, password, create_date FROM `m_user` ORDER BY id DESC;",
+        [],
+        (err, result) => {
+            if (err) {
+                res.send(err);
+            }
+
+            if (result) {
+                res.send({'result':'ok', 'users':result});
+            }
+        }
+    );
+});
+
+router.delete('/users/delete/:id', (req, res) => {
+    const user = {id:req.params.id};
+    const id = user.id;
+
+    db.query("DELETE FROM `m_user` WHERE id = ?", [id], (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+
+        if (result) {
+            res.send({'result':'deleted'});
+        }
+    });
+});
+
 module.exports = router;
